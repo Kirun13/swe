@@ -1,13 +1,16 @@
+from models import *
+from app import app, api
 from datetime import datetime, timedelta
 from flask import jsonify, request
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 from flask_bcrypt import Bcrypt
-from models import *
+from flask_sqlalchemy import SQLAlchemy
+from flask_jwt_extended import JWTManager
 
-from app import app, api
 
 bcrypt = Bcrypt(app)
-
+db = SQLAlchemy(app)
+jwt = JWTManager(app)
 
 @api.route('/api/the_admin/register', methods=['POST'])
 def register_admin():

@@ -1,8 +1,7 @@
-from flask import Blueprint, render_template, request
-from . import session
+from flask import render_template
 
-views = Blueprint('views', __name__)
+from app import views
 
 @views.route('/', methods=['GET','POST'])
-def home():
-    return render_template("templates/home.html")
+def index():
+    return render_template("templates/index.html")
