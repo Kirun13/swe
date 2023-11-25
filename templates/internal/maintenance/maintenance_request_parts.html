@@ -1,0 +1,45 @@
+{% extends "internal/maintenance/maintenance_base.html" %}
+
+{% block title %} Request parts {% endblock %}
+
+{% block content %}
+
+<h2 align="center">Request a part</h1>
+<div class="container py-5">
+    <form>
+        <div class="mb-3">
+            <label for="partname" class="form-label">Name of the part</label>            
+            <input type="text" class="form-control" id="partname" name="partname">
+        </div>
+        <div class="mb-3">
+            <label for="condition" class="form-label">Condition of the part</label>
+            <input type="text" class="form-control" id="condition" name="condition">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="cost">Cost of the item</label>
+            <input type="text" class="form-control" id="cost" name="cost">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+    
+<h2 align="center">Report replacement</h1>
+<div class="container py-5">
+    <form>
+        <div class="mb-3">
+            <label for="partname" class="form-label">Name of the part</label>            
+            <input type="text" class="form-control" id="partname" name="partname">
+        </div>
+        <div class="mb-3">
+            <label for="condition" class="form-label">Part number</label>
+            <input type="text" class="form-control" id="condition" name="condition">
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Image of the replaced part</label>
+            <input class="form-control" type="file" id="formFile">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

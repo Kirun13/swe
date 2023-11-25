@@ -1,0 +1,31 @@
+{% extends "internal/maintenance/maintenance_base.html" %}
+
+{% block title %} Create assignments {% endblock %}
+
+{% block content %}
+
+<h2 align="center">Create maintenance assignments</h1>
+
+<div class="container py-5">
+    <form>
+        <div class="mb-3">
+            <label for="datetimepick" class="form-label">Date and time</label>            
+            <input type="datetime-local" id="datetimepick" name="datetimepick">
+        </div>
+        <div class="mb-3">
+            <label for="vehicle" class="form-label">Vehicle</label>
+            <input type="text" class="form-control" id="vehicle" name="vehicle">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="cost">Cost</label>
+            <input type="text" class="form-control" id="cost" name="cost">
+        </div>
+        <div class="mb-3">
+            <label for="jobdescription" class="form-label">Job description</label>
+            <textarea class="form-control" id="jobdescription" name="jobdescription" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

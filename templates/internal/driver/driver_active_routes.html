@@ -1,0 +1,40 @@
+{% extends "internal/driver/driver_base.html" %}
+
+{% block title %} Driver Active Routes {% endblock %}
+
+{% block content %}
+
+<h1>View my routes</h1>
+
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Date</th>
+        <th scope="col">Start time</th>
+        <th scope="col">Start point</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-primary">
+        <th scope="row">1</th>
+        <td>25.11.2023</td>
+        <td>16:00</td>
+        <td>Kabanbay batyr ave., 53</td>
+        <td>Active</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>26.11.2023</td>
+        <td>16:20</td>
+        <td>Raqymjan Qoshqarbayev ave., 12</td>
+        <td>Assigned</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+{% endblock %}

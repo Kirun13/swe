@@ -1,0 +1,73 @@
+{% extends "internal/fueling/fueling_base.html" %}
+
+{% block title %} Fueling person infromation {% endblock %}
+
+{% block content %}
+
+<h2 align="center">My detailed information</h1>
+
+    <div class="container py-5">
+
+        <h3>Find car by plate number</h3>
+
+        <nav class="navbar bg-body-tertiary py-3">
+            <div class="container-fluid">
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+    
+          <h4>after the search, the table bellow will appear</h4>
+          <h4>if there is no such car, pop error message</h4>
+    
+        <table class="table table-striped py-5">
+            <tr>
+                <th scope="row">Car plate number</th>
+                <td>123ABC03</td>
+                <td><button type="button" class="btn btn-primary">Edit</button></td>
+            </tr>
+            <tr>
+                <th scope="row">Car make</th>
+                <td>Toyota</td>
+                <td><button type="button" class="btn btn-primary">Edit</button></td>
+            </tr>
+    
+            <tr>
+                <th scope="row">Car model</th>
+                <td>Camry 55</td>
+                <td><button type="button" class="btn btn-primary">Edit</button></td>
+            </tr>
+    
+            <tr>
+                <th scope="row">Sitting capacity</th>
+                <td>4</td>
+                <td><button type="button" class="btn btn-primary">Edit</button></td>
+            </tr>
+    
+            <tr>
+                <th scope="row">Milage</th>
+                <td>1000km</td>
+                <td><button type="button" class="btn btn-primary">Edit</button></td>
+            </tr>
+    
+            <tr>
+                <th scope="row">Vehicle status</th>
+                <td>Active</td>
+                <td><button type="button" class="btn btn-primary">Edit</button></td>
+            </tr>
+    
+            <tr>
+                <th scope="row">Maintenance job</th>
+                <td>No maintenance job</td>
+                <td><button type="button" class="btn btn-primary">Edit</button></td>
+            </tr>
+    
+          </table>
+        
+    </div>
+    
+
+
+{% endblock %}

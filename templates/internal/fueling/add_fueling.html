@@ -1,0 +1,39 @@
+{% extends "internal/fueling/fueling_base.html" %}
+
+{% block title %} Fueling person infromation {% endblock %}
+
+{% block content %}
+
+<h2 align="center">Add fueling instance</h1>
+
+    <div class="container py-5">
+
+        <form>
+            <div class="mb-3">
+                <label for="fuel_amount" class="form-label">Fuel amount</label>            
+                <input type="text" class="form-control" id="fuel_amount" name="fuel_amount">
+            </div>
+
+            <div class="mb-3">
+                <label for="cost" class="form-label">Cost</label>
+                <input type="text" class="form-control" id="cost" name="cost">
+            </div>
+
+            <div class="mb-3">
+                <label for="plate_number" class="form-label">Vehicle plate number</label>
+                <input type="text" class="form-control" id="plate_number" name="plate_number">
+            </div>
+
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Proof of fueling</label>
+                <input class="form-control" type="file" id="formFile">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    
+    </div>
+    
+
+
+{% endblock %}
