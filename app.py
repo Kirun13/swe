@@ -20,13 +20,13 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
 
-
-
 from website.apis import api
+
 from website.views import views
 
 app.register_blueprint(api, url_prefix='/')
 app.register_blueprint(views, url_prefix='/')
+
 
 
 

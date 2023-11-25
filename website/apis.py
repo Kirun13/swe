@@ -2,7 +2,7 @@ from .models import *
 from datetime import datetime, timedelta
 from flask import jsonify, request, Blueprint
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
-
+from werkzeug.security import generate_password_hash, check_password_hash
 
 api = Blueprint('api', __name__)
 
@@ -17,7 +17,7 @@ def register_admin():
         return jsonify({'error': 'user_id is required'}), 400
 
     # Hash the password (assuming you have 'the_password' in the incoming data)
-    hashed_password = bcrypt.generate_password_hash(data.get('the_password')).decode('utf-8')
+    hashed_password = generate_password_hash(data.get('the_password'))
 
     # Create User record with the specified user_id
     admin_user = The_User(
@@ -51,9 +51,7 @@ def login_admin():
 
     admin_user = The_User.query.filter_by(email=data.get("email")).first()
 
-    if admin_user and bcrypt.check_password_hash(
-        admin_user.the_password, data.get("the_password")
-    ):
+    if admin_user and check_password_hash(admin_user.the_password, data.get("the_password")):
         access_token = create_access_token(
             identity={
                 "user_id": admin_user.user_id,
