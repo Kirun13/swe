@@ -1,16 +1,10 @@
-from models import *
-from app import app, api
+from .models import *
 from datetime import datetime, timedelta
-from flask import jsonify, request
+from flask import jsonify, request, Blueprint
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
-from flask_bcrypt import Bcrypt
-from flask_sqlalchemy import SQLAlchemy
-from flask_jwt_extended import JWTManager
 
 
-bcrypt = Bcrypt(app)
-db = SQLAlchemy(app)
-jwt = JWTManager(app)
+api = Blueprint('api', __name__)
 
 @api.route('/api/the_admin/register', methods=['POST'])
 def register_admin():

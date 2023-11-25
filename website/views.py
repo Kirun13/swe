@@ -1,7 +1,7 @@
-from flask import render_template
+from flask import render_template, Blueprint
 
-from app import views
+views = Blueprint('views', __name__)
 
-@views.route('/', methods=['GET','POST'])
+@views.route('/')
 def index():
-    return render_template("templates/index.html")
+    return render_template("index.html")
